@@ -1,0 +1,1 @@
+/** */package com.ecom.account.bootstrap;import org.springframework.context.annotation.Bean;import org.springframework.context.annotation.Configuration;/** * @author jcordones13 * */@Configurationpublic class SpringAppConfig {        /*@Bean    public RestClient restClient(){        return new RestClient();    }*/}
