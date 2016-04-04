@@ -39,7 +39,9 @@ public class StatusResourceTest {
     private static Client client;
     private static WebTarget target;
     private static String rootUrl = "account";
-    public static final int OK_CODE = 200;
+
+    /** */
+    private static final int OK_CODE = 200;
 
     /**
      * @throws java.lang.Exception
