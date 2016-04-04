@@ -39,6 +39,7 @@ public class StatusResourceTest {
     private static Client client;
     private static WebTarget target;
     private static String rootUrl = "account";
+    public static final int OK_CODE = 200;
 
     /**
      * @throws java.lang.Exception
@@ -68,7 +69,7 @@ public class StatusResourceTest {
         WebTarget pingTarget = target.path("/status/ping");
         Response res = pingTarget.request(MediaType.TEXT_PLAIN).get();
 
-        Assert.assertEquals(Response.ok(), res.getStatus());
+        Assert.assertEquals(OK_CODE, res.getStatus());
     }
 
    /* @Configuration
