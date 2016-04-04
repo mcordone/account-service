@@ -20,6 +20,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.ws.rs.client.Client;
@@ -33,13 +34,16 @@ import javax.ws.rs.core.Response;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes = SpringAppConfig.class)
+@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class StatusResourceTest {
 
     private static TomcatServer tomcat;
     private static Client client;
     private static WebTarget target;
-    private static String rootUrl = "account";
-    public static final int OK_CODE = 200;
+    private static String rootUrl = "/account";
+
+    /** */
+    private static final int OK_CODE = 200;
 
     /**
      * @throws java.lang.Exception
