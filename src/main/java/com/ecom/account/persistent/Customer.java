@@ -12,22 +12,21 @@
  * limitations under the License.
  */
 
-package com.ecom.account;
+package com.ecom.account.persistent;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * @author tim
- *
+ * Created by jcordones13 on 4/20/16.
  */
-@Configuration
-@ComponentScan(basePackages = { "com.ecom.account" })
-@ImportResource("classpath:applicationContext.xml")
-public class TestSpringConfig implements DisposableBean {
-    @Override
-    public void destroy() throws Exception {
-    }
+@ToString
+@Getter
+@Setter
+public class Customer {
+    private int id;
+    private String fname;
+    private String lname;
+    private String address;
 }

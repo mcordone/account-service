@@ -11,23 +11,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.ecom.account.persistent;
 
-package com.ecom.account;
-
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
- * @author tim
- *
+ * Created by jcordones13 on 4/20/16.
  */
-@Configuration
-@ComponentScan(basePackages = { "com.ecom.account" })
-@ImportResource("classpath:applicationContext.xml")
-public class TestSpringConfig implements DisposableBean {
-    @Override
-    public void destroy() throws Exception {
+@Service
+public class CustomerDelegate {
+    @Autowired
+    private CustomerMapper customerMapper;
+
+    public Customer getCustomer(int id){
+        return customerMapper.getCustomer(1);
     }
+
 }

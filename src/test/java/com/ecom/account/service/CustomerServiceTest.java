@@ -15,22 +15,37 @@
 package com.ecom.account.service;
 
 import com.ecom.account.persistent.Customer;
-import com.ecom.account.persistent.CustomerDelegate;
-import com.ecom.account.persistent.CustomerMapper;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
+import static org.junit.Assert.*;
 
 /**
- * Created by jcordones13 on 3/31/16.
+ * Created by jcordones13 on 5/4/16.
  */
-@Component
-public class CustomerService {
+public class CustomerServiceTest {
 
-    //@Autowired
-    //private CustomerMapper customerMapper;
+    @Autowired
+    private CustomerService customerService;
 
-    public Customer getCustomer(int id){
-        return null; //customerMapper.getCustomer(1);
+    @Before
+    public void setUp() throws Exception {
+
     }
 
+    @After
+    public void tearDown() throws Exception {
+
+    }
+
+    @Test
+    public void testGetCustomer() throws Exception {
+        int customerId = 1;
+        System.out.println("********* customerService " + customerService);
+        //Customer customer = customerService.getCustomer(customerId);
+
+        //assertNotNull(customer);
+    }
 }

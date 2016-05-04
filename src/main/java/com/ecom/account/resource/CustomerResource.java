@@ -14,8 +14,36 @@
 
 package com.ecom.account.resource;
 
+import com.ecom.account.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 /**
  * Created by jcordones13 on 3/31/16.
  */
+@Component
+@Path("customer")
 public class CustomerResource {
+    @Autowired
+    private CustomerService customerService;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    private Response getCustomer(@PathParam("id") final int id){
+        return buildResponse(customerService.getCustomer(id), Response.Status.OK);
+    }
+
+    private Response buildResponse(Object o, Response.Status status) {
+        if (o == null) {
+            return Response.status(Response.Status.NOT_FOUND).type(MediaType.APPLICATION_JSON).build();
+        }
+        return Response.status(status).entity(o).type(MediaType.APPLICATION_JSON).build();
+    }
 }
