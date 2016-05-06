@@ -11,12 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.ecom.account.service;
+package com.ecom.account.persistent;
 
 import static org.junit.Assert.assertNotNull;
 
-import com.ecom.account.persistent.Customer;
+import com.ecom.account.bootstrap.SpringAppConfig;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,33 +24,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ecom.account.bootstrap.SpringAppConfig;
-
 /**
- * Created by jcordones13 on 5/4/16.
+ * @author jcordones13
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 @ContextConfiguration(classes = {SpringAppConfig.class})
-public class CustomerServiceTest {
+public class PersistentTest {
 
     @Autowired
-    private CustomerService customerService;
+    private CustomerMapper customerMapper;
 
+    /**
+     * @throws java.lang.Exception
+     */
     @Before
     public void setUp() throws Exception {
-
     }
 
+    /**
+     * @throws java.lang.Exception
+     */
     @After
     public void tearDown() throws Exception {
-
     }
 
     @Test
-    public void testGetCustomer() throws Exception {
-        int customerId = 1;
-        Customer customer = customerService.getCustomer(customerId);
-
+    public void test() {
+        final int customerId = 1;
+        Customer customer = customerMapper.getCustomer(customerId);
         assertNotNull(customer);
     }
+
 }

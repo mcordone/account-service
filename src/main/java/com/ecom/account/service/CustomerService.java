@@ -15,7 +15,6 @@
 package com.ecom.account.service;
 
 import com.ecom.account.persistent.Customer;
-import com.ecom.account.persistent.CustomerDelegate;
 import com.ecom.account.persistent.CustomerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,11 +25,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerService {
 
-    //@Autowired
-    //private CustomerMapper customerMapper;
+    @Autowired
+    private CustomerMapper customerMapper;
 
     public Customer getCustomer(int id){
-        return null; //customerMapper.getCustomer(1);
+        return customerMapper.getCustomer(id);
     }
 
 }

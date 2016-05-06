@@ -21,9 +21,10 @@ import lombok.ToString;
 /**
  * Created by jcordones13 on 4/20/16.
  */
-@ToString
+
 @Getter
 @Setter
+@ToString
 public class Customer {
     private int id;
     private String fname;

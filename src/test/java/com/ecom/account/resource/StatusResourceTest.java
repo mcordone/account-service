@@ -14,6 +14,7 @@
 
 package com.ecom.account.resource;
 
+import com.ecom.account.bootstrap.SpringAppConfig;
 import com.ecom.account.server.TomcatServer;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -35,8 +36,8 @@ import javax.ws.rs.core.Response;
  * Created by jcordones13 on 4/1/16.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = SpringAppConfig.class)
-@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
+@ContextConfiguration(classes = SpringAppConfig.class)
+//@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class StatusResourceTest {
     private static final Logger LOG = LoggerFactory.getLogger(StatusResourceTest.class);
     /** */
@@ -77,9 +78,4 @@ public class StatusResourceTest {
 
         Assert.assertEquals(OK_CODE, res.getStatus());
     }
-
-   /* @Configuration
-    static class Config {
-
-    }*/
 }

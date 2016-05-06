@@ -16,22 +16,22 @@
 								  ignore-unresolvable="true" ignore-resource-not-found="true"/>
 
 	<context:annotation-config/>
-	<context:component-scan base-package="com.ecom.account"/>
+	<!--<context:component-scan base-package="com.ecom.account"/>
 
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${dataSource.driverClassName}" />
-		<property name="url" value="${dataSource.url}" />
-		<property name="username" value="${dataSource.user}" />
-		<property name="password" value="${dataSource.password}" />
+    <bean id="dataSources" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${dataSource.driverClassName}" />
+        <property name="url" value="${dataSource.url}" />
+        <property name="username" value="${dataSource.user}" />
+        <property name="password" value="${dataSource.password}" />
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSources" />
 	</bean>
 
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
-	<bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.ecom.account" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean>
+    <bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ecom.account"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>-->
 
 </beans>

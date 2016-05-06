@@ -16,7 +16,7 @@
 								  ignore-unresolvable="true" ignore-resource-not-found="true"/>
 
 	<context:annotation-config/>
-	<context:component-scan base-package="com.ecom.account"/>
+	<!--<context:component-scan base-package="com.ecom.account"/>
 
     <bean id="dataSources" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${dataSource.driverClassName}" />
@@ -32,6 +32,6 @@
     <bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.ecom.account"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean>
+	</bean>-->
 
 </beans>
